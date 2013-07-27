@@ -1,0 +1,4 @@
+#!/bin/bash
+
+(cd openlayers && ./build.py)
+rm -rf bin build src

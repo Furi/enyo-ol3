@@ -1,5 +1,5 @@
 enyo.kind({
-    name: 'nbt.OpenLayers',
+    name: 'ca.furi.enyo.OpenLayers',
     fit: true,
     options: null,
     kind: 'Control',
@@ -29,7 +29,9 @@ enyo.kind({
         if (this.options && !this.options.div) {
             this.options.div = this.$.map.getId();
         }
-        this.map = new OpenLayers.Map(this.options);
+
+
+        this.map = new ol.Map(this.options);
         this.doReady();
     }
 });
