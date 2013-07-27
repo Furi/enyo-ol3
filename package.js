@@ -1,4 +1,4 @@
 enyo.depends(
-        "$lib/openlayers/build/ol.js",
-        "$lib/OpenLayers.js"
+        "/lib/js/ol3/openlayers/build/ol.js",
+        "/lib/js/ol3/OpenLayers.js"
 );
