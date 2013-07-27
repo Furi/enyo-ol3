@@ -1,5 +1,5 @@
 enyo.kind({
-    name: 'ca.furi.enyo.OpenLayers',
+    name: 'furi.OpenLayers',
     fit: true,
     options: null,
     kind: 'Control',
@@ -12,9 +12,9 @@ enyo.kind({
     components: [
         { name: 'map', style: 'height: 100%' }
     ],
-    constructor: function(options) {
+    constructor: function() {
         this.inherited(arguments);
-        this.options = options ? options : { };
+	alert("hello");	
     },
     create: function() {
         this.inherited(arguments);
@@ -30,8 +30,31 @@ enyo.kind({
             this.options.div = this.$.map.getId();
         }
 
-
-        this.map = new ol.Map(this.options);
+	alert("hello");
+        this.map = new ol.Map({
+  controls: ol.control.defaults({}, [
+    new ol.control.FullScreen()
+  ]),
+  interactions: ol.interaction.defaults({}, [
+    new ol.interaction.DragRotateAndZoom()
+  ]),
+  layers: [
+    new ol.layer.TileLayer({
+      source: new ol.source.BingMaps({
+        key: 'Ar33pRUvQOdESG8m_T15MUmNz__E1twPo42bFx9jvdDePhX0PNgAcEm44OVTS7tt',
+        style: 'Aerial'
+      })
+    })
+  ],
+  // Use the canvas renderer because it's currently the fastest
+  renderer: ol.RendererHint.CANVAS,
+  target: 'screenManager_theMap_map',
+  view: new ol.View2D({
+    center: [-33519607, 5616436],
+    rotation: -Math.PI / 8,
+    zoom: 8
+  })
+});
         this.doReady();
     }
 });
