@@ -25,13 +25,10 @@ enyo.kind({
     rendered: function() {
         this.inherited(arguments);
 
-
-	alert(0);
         this.doReady();
     },
 
 	renderMap: function() {
-		alert(5);
 
 	        if (this.options && !this.options.div) {
 	            this.options.div = this.$.map.getId();
