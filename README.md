@@ -19,6 +19,7 @@ Install
 2. `git clone <url> ol3`
 3. `git submodule update --init --recursive`
 4. `scripts/init`
+5. Pirate example.js in your project
 
 License
 =======
